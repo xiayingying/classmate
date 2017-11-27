@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>郑州航院2018年聚会</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="./static/swiper/css/swiper.min.css">
+		<link rel="stylesheet" href="static/main/css/main.css" />
+	</head>
+	<body>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide" data-hash="slide1">
+					<div class="header">
+						<strong>倡议书</strong>
+					</div>
+					<div style="margin-top: 40px;">
+						时维7月，序属仲夏！二十年前的夏天，我们结束了师范三年的学习，告别母校，大家带着对美好未来生活的憧憬，各奔东西，世界那么大，我们一起去看看。然而，同窗三载，一切如昨，激情岁月，依稀如梦，但愿大家还记得你我！  
+						</div>
+						<div style="margin-top: 20px;">
+二十年，你还想我们吗？同桌的你是否容颜依旧，同窗的你是否英姿勃发。你还记得那些曾经三载的母校吗？那里有我们的荣辱悲欢，那里有我们的青春足迹；那里是有我们伏案苦读的身影，那里有我们一起走过的日子，那里有......这一切的一切......仿佛那一切就在昨天！是啊，那里有着我们太多的憧憬、回忆、历练。
+					</div>
+				</div>
+				<div class="swiper-slide" data-hash="slide2">
+					<div class="header">
+						<strong>详情咨询</strong>
+					</div>
+				<div style="margin-top: 40px;">
+					<p>活动时间：2018年5月1日</p>
+					<p>报名截止时间：2018年4月26日</p>
+					<p>报名方式：本页填写资料</p>
+					<p>活动费用：AA制,500元/人，多退少补</p>
+				</div>
+				</div>
+				<div class="swiper-slide" data-hash="slide5">
+					
+					<div class="header">
+						<strong>预约报名</strong>
+					</div>
+					<div class="main">
+						<div class="main-item">
+							<div class="main-title">姓名</div>
+							<input class="input" placeholder="姓名">
+						</div>
+						<div class="main-item">
+							<div class="main-title">手机号</div>
+							<input class="input" placeholder="手机号">
+						</div>
+						<div class="main-item">
+							<div class="main-title">参与人数</div>
+							<input class="input" placeholder="不带家属填1，带家属填2">
+						</div>
+						<div class="main-item">
+							<div class="main-title">备注信息</div>
+							<input class="input" placeholder="请填写自己的学号，便于查找">
+						</div>
+						<div class="main-item">
+							<button class="btn">确认报名</button>
+						</div>
+
+						<div class="main-item">
+							<div class="main-title">提示: 报名截止日期为2018年4月27日，请同学们提前报名，便于统一安排。</div>
+						</div>
+					</div>
+					
+					
+				</div>
+
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+		<div class="list" id="list">
+			<a class="list-item" href="#slide1">倡议书</a>
+			<a class="list-item" href="#slide2">活动流程</a>
+			<a class="list-item" href="#slide5">预约报名</a>
+
+		</div>
+		<div class="footer clear">
+			<div class="footer-item">
+				<a class="btn btn-warning" onclick="list()">活动详情</a>
+			</div>
+			<div class="footer-item">
+				<a class="btn btn-danger" href="#slide5">预约报名</a>
+			</div>
+		</div>
+
+		<div class="bgm-btn" onclick="audio()" id="btn"></div>
+
+		<audio src="./static/main/media/guangyindegushi.mp3" loop="loop" id="audio"></audio>
+
+		<script src="./static/swiper/js/swiper.min.js"></script>
+		<script>
+			var swiper = new Swiper('.swiper-container', {
+				direction: 'vertical',
+				hashNavigation: {
+					watchState: true,
+				},
+				pagination: {
+					el: '.swiper-pagination',
+					clickable: true
+				},
+			});
+
+			function list() {
+				var obj = document.getElementById("list");
+				if(obj.style.display == "none" || obj.style.display == "") {
+					obj.style.display = "block"; //显示
+				} else {
+					obj.style.display = "none"; //隐藏
+				}
+			}
+			
+			var sh = 0;
+			var deg = 0;
+						
+			function audio() {
+				var obj = document.getElementById("audio");
+				var btn = document.getElementById("btn");
+						
+				if(obj.paused) {
+					obj.play();
+					sh = setInterval(function(){
+						deg = deg + 30;
+						btn.style.transform = "rotate(" + deg + "deg)";
+					}, 100);
+				} else {
+					sh = clearInterval(sh);
+					obj.pause();
+				}
+			}
+		</script>
+	</body>
+
+</html>
